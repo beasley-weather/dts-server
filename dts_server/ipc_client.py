@@ -1,3 +1,6 @@
+# TODO
+# - Handling of zmq client or server disconnect (timeout?)
+
 import zmq
 
 
