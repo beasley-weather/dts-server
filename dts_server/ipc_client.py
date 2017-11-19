@@ -13,6 +13,7 @@ class IPC_Client:
 
     def __enter__(self):
         self._sock.connect(self._sock_addr)
+        return self
 
     def __exit__(self, *args):
         self._sock.disconnect(self._sock_addr)
@@ -26,4 +27,4 @@ class IPC_Client:
         resp = self._sock.recv()
         if (resp != self.ACK):
             # todo error handling, perhaps cache data temporarily, or throw exception
-            pass
+            raise Exception('Horrible, horrible things have happened!')
