@@ -10,6 +10,7 @@ name = "pypi"
 flask = "*"
 pyzmq = "*"
 "e1839a8" = {path = ".", editable = true}
+weewx-orm = {git = "https://github.com/beasley-weather/weewx-orm.git"}
 
 
 [dev-packages]
