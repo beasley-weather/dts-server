@@ -1,22 +1,10 @@
-# todo
+# TODO
 # - logging
 
-from flask import Flask, request
+from sys import argv
 
-import weewx_orm
-
-
-app = Flask(__name__)
+from .app import create_app
 
 
-@app.route('/data', methods=['POST'])
-def route_data():
-    data = request.stream.read()
-    weewx_orm.archive_insert(data)
-
-
-def shutdown():
-    func = request.environ.get('werkzeug.server.shutdown')
-    if func is None:
-        raise RuntimeError('Not running with Werkzeug Server')
-    func()
+# TODO args handling
+app = create_app(argv[1])
