@@ -1,9 +1,0 @@
-Transfer agent will be responsible for handling incoming data from the weather station
-and inserting the data into the weewx server's database.
-
-1. Weather Station sends data over http/ws
-2. Transfer Agent accepts data
-3. Transfer Agent pre-processes the data (if at all)
-4. Transfer Agent invokes a database ORM insertion module
-5. Insertion module inserts data into database
-6. Tranfer Agent periodically invokes weewx to update itself (check database)
