@@ -1,7 +1,7 @@
 # TODO
 # - logging
 
-from os import env
+from os import environ as env
 
 from .app import create_app
 
