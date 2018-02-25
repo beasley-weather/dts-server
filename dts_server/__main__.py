@@ -10,4 +10,4 @@ app = create_app(env['WEEWX_DATABASE'])
 
 
 if __name__ == '__main__':
-    app.run(env['DTS_PORT'])
+    app.run(host='0.0.0.0', port=int(env['DTS_PORT']))
