@@ -18,6 +18,7 @@ def create_app(database):
     @app.route('/', methods=['POST'])
     def route_data():
         try:
+            print(request.stream.read())
             data = json.loads(request.stream.read())
             weewx_db.archive_insert_data(data)
         except JSONDecodeError:
